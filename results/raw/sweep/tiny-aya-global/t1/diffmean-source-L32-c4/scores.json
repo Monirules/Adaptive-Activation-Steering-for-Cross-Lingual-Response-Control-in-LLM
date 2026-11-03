@@ -1,0 +1,342 @@
+{
+  "overall": {
+    "lfs": 0.10666666666666667,
+    "or": 0.0008333333333333334,
+    "lss": 0.00165374677002584,
+    "n_pairs": 30
+  },
+  "by_target_language": {
+    "ar": {
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "de": {
+      "lfs": 0.13333333333333333,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "en": {
+      "lfs": 0.4333333333333333,
+      "or": 0.008333333333333333,
+      "lss": 0.01635220125786163,
+      "n_pairs": 3
+    },
+    "es": {
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "fr": {
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "hi": {
+      "lfs": 0.26666666666666666,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "ja": {
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "ko": {
+      "lfs": 0.03333333333333333,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "ru": {
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    },
+    "zh": {
+      "lfs": 0.19999999999999998,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_pairs": 3
+    }
+  },
+  "by_pair": {
+    "ar_to_es": {
+      "source": "ar",
+      "target": "es",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ar_to_ko": {
+      "source": "ar",
+      "target": "ko",
+      "lfs": 0.1,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ar_to_zh": {
+      "source": "ar",
+      "target": "zh",
+      "lfs": 0.3,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "de_to_ar": {
+      "source": "de",
+      "target": "ar",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "de_to_fr": {
+      "source": "de",
+      "target": "fr",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 1
+    },
+    "de_to_ru": {
+      "source": "de",
+      "target": "ru",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "en_to_de": {
+      "source": "en",
+      "target": "de",
+      "lfs": 0.4,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "en_to_hi": {
+      "source": "en",
+      "target": "hi",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "en_to_ja": {
+      "source": "en",
+      "target": "ja",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "es_to_en": {
+      "source": "es",
+      "target": "en",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "es_to_ko": {
+      "source": "es",
+      "target": "ko",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "es_to_zh": {
+      "source": "es",
+      "target": "zh",
+      "lfs": 0.15,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "fr_to_ar": {
+      "source": "fr",
+      "target": "ar",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "fr_to_es": {
+      "source": "fr",
+      "target": "es",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "fr_to_ru": {
+      "source": "fr",
+      "target": "ru",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "hi_to_de": {
+      "source": "hi",
+      "target": "de",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "hi_to_fr": {
+      "source": "hi",
+      "target": "fr",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "hi_to_ru": {
+      "source": "hi",
+      "target": "ru",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ja_to_de": {
+      "source": "ja",
+      "target": "de",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ja_to_fr": {
+      "source": "ja",
+      "target": "fr",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ja_to_hi": {
+      "source": "ja",
+      "target": "hi",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ko_to_en": {
+      "source": "ko",
+      "target": "en",
+      "lfs": 0.7,
+      "or": 0.025,
+      "lss": 0.04827586206896552,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ko_to_hi": {
+      "source": "ko",
+      "target": "hi",
+      "lfs": 0.8,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ko_to_ja": {
+      "source": "ko",
+      "target": "ja",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ru_to_ar": {
+      "source": "ru",
+      "target": "ar",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ru_to_es": {
+      "source": "ru",
+      "target": "es",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "ru_to_zh": {
+      "source": "ru",
+      "target": "zh",
+      "lfs": 0.15,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "zh_to_en": {
+      "source": "zh",
+      "target": "en",
+      "lfs": 0.6,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "zh_to_ja": {
+      "source": "zh",
+      "target": "ja",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    },
+    "zh_to_ko": {
+      "source": "zh",
+      "target": "ko",
+      "lfs": 0.0,
+      "or": 0.0,
+      "lss": 0.0,
+      "n_items": 20,
+      "n_unparsed_judge": 0
+    }
+  }
+}

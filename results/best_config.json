@@ -1,0 +1,20 @@
+{
+  "Llama-3.1-8B-Instruct": {
+    "vector": "source",
+    "layer": 20,
+    "strength": 1.0,
+    "LFS": 0.9633,
+    "OR": 0.8942,
+    "LSS": 0.9275,
+    "pairs": 30
+  },
+  "tiny-aya-global": {
+    "vector": "source",
+    "layer": 14,
+    "strength": 1.0,
+    "LFS": 0.9583,
+    "OR": 0.9758,
+    "LSS": 0.967,
+    "pairs": 30
+  }
+}
