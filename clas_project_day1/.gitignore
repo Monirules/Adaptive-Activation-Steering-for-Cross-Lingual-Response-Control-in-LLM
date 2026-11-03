@@ -1,0 +1,24 @@
+# Official CLaS repo (cloned separately, not our code)
+CLaS-SemEval-2027/
+official/
+
+# Large or generated files (they live on ARCC2 scratch)
+data/
+generations/
+vectors/
+hf_cache/
+logs/
+*.pt
+*.bin
+*.safetensors
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
