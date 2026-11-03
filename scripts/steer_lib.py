@@ -101,6 +101,7 @@ def generate(model, tok, items: list, max_new_tokens: int, batch_size: int,
         idx = order[b * batch_size:(b + 1) * batch_size]
         enc = tok([items[i]["text"] for i in idx], return_tensors="pt", padding=True,
                   add_special_tokens=False).to(model.device)
+        enc.pop("token_type_ids", None)
         if steerer is not None:
             steerer.vecs = torch.stack([items[i]["vec"] for i in idx])
         gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False,
