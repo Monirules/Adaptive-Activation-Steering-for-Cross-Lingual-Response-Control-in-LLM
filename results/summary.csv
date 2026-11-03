@@ -1,0 +1,9 @@
+split,model,track,method,LFS,OR,LSS,pairs,answers,judge_unparsed
+dev,Llama-3.1-8B-Instruct,t1,english,0.4933,0.9808,0.6565,90,1800,0
+dev,Llama-3.1-8B-Instruct,t1,none,0.0,0.9933,0.0,90,1800,0
+dev,tiny-aya-global,t1,english,0.9589,0.9883,0.9734,90,1800,0
+dev,tiny-aya-global,t1,none,0.0,0.995,0.0,90,1800,0
+test,Llama-3.1-8B-Instruct,t1,english,0.5324,0.9892,0.6923,90,4500,0
+test,Llama-3.1-8B-Instruct,t1,none,0.0,0.9937,0.0,90,4500,0
+test,tiny-aya-global,t1,english,0.9629,0.9958,0.9791,90,4500,0
+test,tiny-aya-global,t1,none,0.0,0.998,0.0,90,4500,2
