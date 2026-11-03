@@ -33,7 +33,7 @@ if [ ! -x "$VENV/bin/python" ]; then
 fi
 uv pip install --python "$VENV/bin/python" -r "$OFFICIAL/requirements.txt"
 uv pip install --python "$VENV/bin/python" pandas matplotlib
-
+uv pip install --python "$VENV/bin/python" "numpy==1.26.4" "pyarrow>=15,<20" "datasets==3.6.0"
 echo "== 5/6 environment file ~/.clas_env"
 cat > "$HOME/.clas_env" <<ENV
 # CLaS project environment (written by scripts/setup_cluster.sh)
