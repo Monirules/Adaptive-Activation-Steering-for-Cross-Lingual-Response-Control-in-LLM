@@ -37,7 +37,7 @@ def main() -> int:
             continue
         split, model, method = parts[0], parts[1], parts[-1]
         track = "/".join(parts[2:-1])
-        if split == "smoke" and not args.include_smoke:
+        if split.startswith("smoke") and not args.include_smoke:
             continue
         s = json.loads(f.read_text(encoding="utf-8"))
         o = s["overall"]
