@@ -8,8 +8,7 @@
 #SBATCH --mem=96G
 #SBATCH --time=06:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
-# Scores every unscored generation folder under ROOT (fastText + Qwen3-8B judge, loaded once).
-# Usage (from ~/clas_project):  sbatch slurm/score.sbatch ROOT
+
 set -euo pipefail
 ROOT="${1:?root folder}"
 source "$HOME/.clas_env"

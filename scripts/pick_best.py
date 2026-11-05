@@ -1,13 +1,5 @@
 #!/usr/bin/env python3
-"""Read the dev sweep scores, pick the best DiffMean config per model by LSS,
-and draw one figure per model (LSS, LFS and OR against layer).
 
-Reads  $CLAS_GEN/sweep/<model>/t1/diffmean-<vector>-L<layer>-c<strength>/scores.json
-Writes results/sweep_<model>.csv, results/sweep_<model>.png, results/best_config.json
-
-Usage
-  python scripts/pick_best.py
-"""
 
 import argparse
 import csv

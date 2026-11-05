@@ -1,22 +1,5 @@
 #!/usr/bin/env python3
-"""Make the fixed 20 dev / 50 test split of the 70 CLaS-Bench questions.
 
-The split is by question index (the line number in data/validation/<code>.txt,
-which the official download script sorts by question_id). The same indices are
-used in every language, so no question is in both sets in any language.
-
-If the CLaS-Bench dataset on Hugging Face has a category column, the split is
-balanced by category. Otherwise it is a plain random split with a fixed seed.
-
-Writes
-  splits/split.json                         (goes into git)
-  $CLAS_DATA/validation_dev/<code>.txt      (20 questions per language)
-  $CLAS_DATA/validation_test/<code>.txt     (50 questions per language)
-
-Usage
-  python scripts/make_splits.py              # first time
-  python scripts/make_splits.py --check      # later: confirm files still match split.json
-"""
 
 import argparse
 import hashlib

@@ -1,24 +1,5 @@
 #!/usr/bin/env python3
-"""DiffMean steering: answer each source-language question with NO language
-instruction, while adding strength * (mean[target] - mean[reference]) to the
-output of one decoder layer at every token.
 
-Writes the official output format, so the official evaluate.py can score it:
-  <out-root>/<model_short>/<track>/<method>/<src>_to_<tgt>.json
-  method = diffmean-<vector>-L<layer>-c<strength>
-
-One run can loop over several layers, strengths and vector kinds (the model is
-loaded once). Configs whose 90 (or 30) pair files already exist are skipped.
-
-Examples
-  # dev sweep on 30 pairs, short answers
-  python scripts/run_steering.py --model meta-llama/Llama-3.1-8B-Instruct --split dev \
-      --pairs sweep --layers 12 16 20 24 28 --strengths 0.5 1 2 4 \
-      --vectors source others --max-new-tokens 256 --out-root $CLAS_GEN/sweep
-  # final test run with the chosen config
-  python scripts/run_steering.py --model meta-llama/Llama-3.1-8B-Instruct --split test \
-      --layers 16 --strengths 2 --vectors source
-"""
 
 import argparse
 import json

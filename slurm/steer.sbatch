@@ -8,8 +8,7 @@
 #SBATCH --mem=96G
 #SBATCH --time=08:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
-# Runs DiffMean steering generation. All arguments go to scripts/run_steering.py.
-# Usage (from ~/clas_project):  sbatch slurm/steer.sbatch --model M --split dev ...
+
 set -euo pipefail
 source "$HOME/.clas_env"
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 TOKENIZERS_PARALLELISM=false

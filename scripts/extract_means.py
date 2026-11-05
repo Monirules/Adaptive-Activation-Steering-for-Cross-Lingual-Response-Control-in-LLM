@@ -1,18 +1,4 @@
 #!/usr/bin/env python3
-"""Average hidden state per language and per layer, from FLORES+ sentences.
-
-For each language, every FLORES+ sentence is run through the model (plain text,
-no chat template). At each decoder layer we average the layer's output over all
-real tokens (padding and the first BOS token excluded), then over sentences.
-
-Saves $CLAS_VECTORS/<model_short>/means.pt with
-  means[lang]  float32 [num_layers, hidden]   (layer i = output of decoder layer i)
-  norm[lang]   float32 [num_layers]           average token-vector length
-  n_tokens[lang]
-
-Usage
-  python scripts/extract_means.py --model meta-llama/Llama-3.1-8B-Instruct
-"""
 
 import argparse
 import os

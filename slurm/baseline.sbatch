@@ -8,17 +8,7 @@
 #SBATCH --mem=96G
 #SBATCH --time=06:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
-#
-# Generates answers with the OFFICIAL run_baseline.py, then scores them with the
-# OFFICIAL evaluate.py (fastText LFS + Qwen3-8B judge OR -> LSS).
-#
-# Usage (always submit from ~/clas_project):
-#   sbatch slurm/baseline.sbatch MODEL SPLIT INSTRUCTION [TRACK] [K]
-#     MODEL        meta-llama/Llama-3.1-8B-Instruct | CohereLabs/tiny-aya-global
-#     SPLIT        dev | test | smoke   (smoke = first K dev questions, default 2)
-#     INSTRUCTION  english ("... Respond in German.") | none (no instruction)
-#     TRACK        t1 (default) | t2
-#     K            optional: only the first K questions per language
+
 set -euo pipefail
 
 MODEL="${1:?model}"; SPLIT="${2:?split}"; INSTR="${3:?instruction}"

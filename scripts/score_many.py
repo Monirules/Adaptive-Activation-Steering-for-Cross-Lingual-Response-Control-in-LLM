@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Score many generation folders at once with the OFFICIAL evaluate.py code.
 
-Same metrics as evaluate.py (fastText LFS, Qwen3-8B judge OR, LSS), but the
-judge model is loaded once for all folders instead of once per folder.
-Folders that already have scores.json are skipped (use --redo to rescore).
-
-Usage
-  python scripts/score_many.py --root $CLAS_GEN/sweep
-  python scripts/score_many.py --root $CLAS_GEN/sweep --skip-judge    # LFS only, fast
-"""
 
 import argparse
 import importlib.util

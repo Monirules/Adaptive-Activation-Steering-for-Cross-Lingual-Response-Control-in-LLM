@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Look inside a generation folder: which language did the model actually answer in?
 
-For every pair, counts the language fastText detects (same rule as evaluate.py:
-'unk' when confidence < 0.9), and shows a few example answers for chosen pairs.
-Also counts answers that look truncated (no end, very long) or repetitive.
-
-Usage
-  python scripts/inspect_outputs.py --gen-dir $CLAS_GEN/test/Llama-3.1-8B-Instruct/t1/english \
-      --show ar_to_en hi_to_de --n 2
-"""
 
 import argparse
 import importlib.util

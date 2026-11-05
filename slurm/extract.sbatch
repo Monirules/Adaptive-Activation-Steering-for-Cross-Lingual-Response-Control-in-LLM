@@ -8,8 +8,7 @@
 #SBATCH --mem=96G
 #SBATCH --time=02:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
-# Average hidden state per language and layer from FLORES+ (both splits, 2009 sentences).
-# Usage (from ~/clas_project):  sbatch slurm/extract.sbatch MODEL
+
 set -euo pipefail
 MODEL="${1:?model}"
 source "$HOME/.clas_env"

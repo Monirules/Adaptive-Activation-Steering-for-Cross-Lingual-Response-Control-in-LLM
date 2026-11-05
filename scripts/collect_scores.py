@@ -1,16 +1,5 @@
 #!/usr/bin/env python3
-"""Collect every scores.json written by the official evaluate.py into tables.
 
-Looks under $CLAS_GEN/<split>/<model>/<track...>/<method>/scores.json and writes
-  results/summary.csv          one row per (split, model, track, method)
-  results/by_target.csv        one row per target language
-  results/summary.md           tables for the report
-  results/raw/...              a copy of each scores.json
-
-Usage
-  python scripts/collect_scores.py                 # dev and test
-  python scripts/collect_scores.py --include-smoke
-"""
 
 import argparse
 import csv

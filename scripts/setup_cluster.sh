@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# One-time setup on the ARCC2 login node.
-# Usage (from ~/clas_project):  bash scripts/setup_cluster.sh
+
 set -euo pipefail
 
 REPO="$HOME/clas_project"
@@ -36,7 +35,7 @@ uv pip install --python "$VENV/bin/python" pandas matplotlib
 uv pip install --python "$VENV/bin/python" "numpy==1.26.4" "pyarrow>=15,<20" "datasets==3.6.0"
 echo "== 5/6 environment file ~/.clas_env"
 cat > "$HOME/.clas_env" <<ENV
-# CLaS project environment (written by scripts/setup_cluster.sh)
+
 export CLAS_ROOT=$REPO
 export CLAS_OFFICIAL=$OFFICIAL
 export CLAS_SCRATCH=$SCR

@@ -1,9 +1,4 @@
-"""Shared code for activation steering with Hugging Face transformers.
 
-Steering = add a vector to the output of one decoder layer (the residual stream)
-at every token position, for the prompt and for every generated token.
-Each row in a batch can get its own vector, so one batch can mix language pairs.
-"""
 
 import os
 import sys

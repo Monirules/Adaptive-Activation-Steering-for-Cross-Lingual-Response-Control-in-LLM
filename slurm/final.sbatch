@@ -8,9 +8,6 @@
 #SBATCH --mem=96G
 #SBATCH --time=10:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
-# Final course-test run (50 questions, all 90 Track-1 pairs, 1024 tokens) with the
-# config that won the dev sweep (results/best_config.json), then scoring.
-# Usage (from ~/clas_project):  sbatch slurm/final.sbatch MODEL
 set -euo pipefail
 MODEL="${1:?model}"
 SHORT="${MODEL##*/}"
