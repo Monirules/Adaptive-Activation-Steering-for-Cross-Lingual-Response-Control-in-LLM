@@ -6,7 +6,7 @@
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=96G
-#SBATCH --time=16:00:00
+#SBATCH --time=08:00:00
 #SBATCH --output=logs/slurm/%x_%j.out
 
 set -euo pipefail
@@ -14,6 +14,7 @@ MODEL="${1:?model}"
 LAYERS="${2:?layers}"
 STRENGTHS="${3:?strengths}"
 T3_TARGET="${4:-de}"
+TRACKS="${5:-t1 t2 t3}"
 SHORT="${MODEL##*/}"
 
 source "$HOME/.clas_env"
@@ -29,7 +30,7 @@ echo "model=$MODEL layers=$LAYERS strengths=$STRENGTHS"
 "$CLAS_PY" scripts/score_many.py --root "$CLAS_GEN/sweep/$SHORT"
 "$CLAS_PY" scripts/pick_best.py --root "$CLAS_GEN/sweep"
 
-for TRACK in t1 t2 t3; do
+for TRACK in $TRACKS; do
   bash slurm/track_test.sbatch "$MODEL" "$TRACK" "$T3_TARGET"
 done
 

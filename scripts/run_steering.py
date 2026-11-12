@@ -12,10 +12,16 @@ import torch
 import steer_lib as S
 
 
-def sweep_pairs():
-    """30 Track-1 pairs: each target with 3 fixed sources (each source used 3 times)."""
+def sweep_pairs(track: str = "t1"):
+    """30 pairs: each target with 3 fixed high-resource sources."""
     H = S.HIGH
-    return [(H[(i + k) % 10], t) for i, t in enumerate(H) for k in (1, 4, 7)]
+    if track == "t1":
+        targets = H
+    elif track == "t2":
+        targets = S.LOW
+    else:
+        raise ValueError("sweep pairs exist only for t1 and t2")
+    return [(H[(i + k) % 10], t) for i, t in enumerate(targets) for k in (1, 4, 7)]
 
 
 def fmt(x: float) -> str:
@@ -34,7 +40,10 @@ def main() -> int:
                    help="layer indices; default: --layer-fracs of the model depth")
     p.add_argument("--layer-fracs", type=float, nargs="+",
                    default=[0.375, 0.5, 0.625, 0.75, 0.875])
-    p.add_argument("--strengths", type=float, nargs="+", required=True)
+    p.add_argument("--strengths", type=float, nargs="+", default=None)
+    p.add_argument("--config-file", type=Path, default=None,
+                   help="per-target settings from pick_per_target.py")
+    p.add_argument("--method-name", default="tuned")
     p.add_argument("--vectors", nargs="+", default=["source"], choices=["source", "others"])
     p.add_argument("--k", type=int, default=None, help="only first k questions (smoke test)")
     p.add_argument("--max-new-tokens", type=int, default=1024)
@@ -49,7 +58,7 @@ def main() -> int:
     short = args.model.split("/")[-1]
     out_root = args.out_root or Path(os.environ.get("CLAS_GEN", "generations")) / args.split
     track_dir = args.track if args.track != "t3" else f"t3/{args.t3_target}"
-    pairs = sweep_pairs() if args.pairs == "sweep" else L.pairs(args.track, args.t3_target)
+    pairs = sweep_pairs(args.track) if args.pairs == "sweep" else L.pairs(args.track, args.t3_target)
     sources = sorted({s for s, _ in pairs})
 
     qdir = args.data_dir / f"validation_{args.split}"
@@ -61,18 +70,36 @@ def main() -> int:
     means_file = args.vectors_root / short / "means.pt"
     md = torch.load(means_file, map_location="cpu")
     means = md["means"]
-    if args.layers is None:
-        args.layers = sorted({round(f * md["num_layers"]) for f in args.layer_fracs})
-    print(f"layers {args.layers}, strengths {args.strengths}, vectors {args.vectors}")
+    jobs = []
+    if args.config_file is not None:
+        per_target = json.loads(args.config_file.read_text(encoding="utf-8"))["targets"]
+        d = out_root / short / track_dir / args.method_name
+        groups = {}
+        for s_, t in pairs:
+            if t not in per_target:
+                raise SystemExit(f"no setting for target {t} in {args.config_file}")
+            c = per_target[t]
+            groups.setdefault((c["vector"], int(c["layer"]), float(c["strength"])), []).append((s_, t))
+        for (v, l, c), sub in sorted(groups.items()):
+            jobs.append((v, l, c, sub, d))
+        print(f"per-target settings from {args.config_file}: {len(groups)} groups")
+    else:
+        if args.strengths is None:
+            raise SystemExit("--strengths is required without --config-file")
+        if args.layers is None:
+            args.layers = sorted({round(f * md["num_layers"]) for f in args.layer_fracs})
+        print(f"layers {args.layers}, strengths {args.strengths}, vectors {args.vectors}")
+        for v in args.vectors:
+            for l in args.layers:
+                for c in args.strengths:
+                    jobs.append((v, l, c, pairs, out_root / short / track_dir / f"diffmean-{v}-L{l}-c{fmt(c)}"))
 
-    configs = [(v, l, c) for v in args.vectors for l in args.layers for c in args.strengths]
     todo = []
-    for v, l, c in configs:
-        d = out_root / short / track_dir / f"diffmean-{v}-L{l}-c{fmt(c)}"
-        if all((d / f"{s}_to_{t}.json").exists() for s, t in pairs):
-            print(f"skip (done): {d}")
+    for v, l, c, sub, d in jobs:
+        if all((d / f"{s_}_to_{t}.json").exists() for s_, t in sub):
+            print(f"skip (done): {d} layer={l} strength={c} ({len(sub)} pairs)")
         else:
-            todo.append((v, l, c, d))
+            todo.append((v, l, c, sub, d))
     if not todo:
         return 0
 
@@ -81,15 +108,15 @@ def main() -> int:
     n_layers = len(S.get_layers(model))
     texts = {s: S.chat_inputs(tok, questions[s]) for s in sources}
 
-    for v, layer, c, d in todo:
+    for v, layer, c, sub, d in todo:
         if not 0 <= layer < n_layers:
             print(f"!! layer {layer} out of range (model has {n_layers}); skipping")
             continue
         t0 = time.time()
-        print(f"\n=== vector={v} layer={layer} strength={c} -> {d}", flush=True)
+        print(f"\n=== vector={v} layer={layer} strength={c} pairs={len(sub)} -> {d}", flush=True)
         steerer = S.Steerer(model, layer)
         items, keys = [], []
-        for s, t in pairs:
+        for s, t in sub:
             vec = c * S.steering_vector(means, layer, s, t, v, ref_langs)
             for j in range(n_q):
                 items.append({"text": texts[s][j], "vec": vec})
