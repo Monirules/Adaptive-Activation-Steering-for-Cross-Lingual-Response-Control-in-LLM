@@ -1,0 +1,15 @@
+
+Detected answer language per target (/N/lustre/scratch/mahmudmi/clas-data/generations/test/Llama-3.1-8B-Instruct/t2/diffmean-source-L20-c1):
+TARGET = correct language, SOURCE = answered in the question's language, unk = low confidence
+  -> cs: TARGET 96%, unk 2%, slv_Latn 0%, sk 0%
+  -> el: TARGET 96%, unk 4%, lmo_Latn 0%, hau_Latn 0%
+  -> fa: TARGET 62%, unk 28%, prs_Arab 10%, ar 0%
+  -> mt: TARGET 47%, unk 32%, en 10%, krc_Cyrl 1%
+  -> no: TARGET 93%, unk 5%, dan_Latn 1%, zh 0%
+  -> sw: TARGET 81%, unk 12%, tsn_Latn 3%, nya_Latn 2%
+  -> th: TARGET 98%, unk 2%
+  -> tr: TARGET 97%, unk 2%, zh 0%, pag_Latn 0%
+  -> uk: TARGET 98%, unk 2%, chv_Cyrl 0%
+  -> vi: TARGET 99%, unk 0%, no 0%
+
+5000 answers: 3061 look repetitive (61.2%), 278 longer than 3500 characters (5.6%)

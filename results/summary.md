@@ -101,6 +101,12 @@
 | Llama-3.1-8B-Instruct | t1 | diffmean-source-L20-c1 | 0.958 | 0.905 | **0.931** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | english | 0.532 | 0.989 | **0.692** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | none | 0.000 | 0.994 | **0.000** | 90 | 4500 | 0 |
+| Llama-3.1-8B-Instruct | t2 | diffmean-source-L20-c1 | 0.868 | 0.705 | **0.778** | 100 | 5000 | 7 |
+| Llama-3.1-8B-Instruct | t2 | english | 0.767 | 0.932 | **0.841** | 100 | 5000 | 11 |
+| Llama-3.1-8B-Instruct | t3/de | diffmean-source-L20-c1 | 0.972 | 0.957 | **0.964** | 19 | 950 | 0 |
+| Llama-3.1-8B-Instruct | t3/de | english | 0.552 | 0.983 | **0.707** | 19 | 950 | 0 |
 | tiny-aya-global | t1 | diffmean-source-L14-c1 | 0.962 | 0.989 | **0.975** | 90 | 4500 | 0 |
 | tiny-aya-global | t1 | english | 0.963 | 0.996 | **0.979** | 90 | 4500 | 0 |
 | tiny-aya-global | t1 | none | 0.000 | 0.998 | **0.000** | 90 | 4500 | 2 |
+| tiny-aya-global | t2 | english | 0.959 | 0.991 | **0.975** | 100 | 5000 | 15 |
+| tiny-aya-global | t3/de | english | 0.993 | 0.996 | **0.995** | 19 | 950 | 1 |
