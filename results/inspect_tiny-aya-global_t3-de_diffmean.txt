@@ -1,0 +1,6 @@
+
+Detected answer language per target (/N/lustre/scratch/mahmudmi/clas-data/generations/test/tiny-aya-global/t3/de/diffmean-source-L12-c1):
+TARGET = correct language, SOURCE = answered in the question's language, unk = low confidence
+  -> de: TARGET 98%, en 2%, afr_Latn 0%, unk 0%
+
+950 answers: 11 look repetitive (1.2%), 69 longer than 3500 characters (7.3%)

@@ -1,20 +1,38 @@
 {
   "Llama-3.1-8B-Instruct": {
     "vector": "source",
-    "layer": 20,
-    "strength": 1.0,
-    "LFS": 0.9633,
-    "OR": 0.8942,
-    "LSS": 0.9275,
+    "layer": 16,
+    "strength": 0.75,
+    "LFS": 0.98,
+    "OR": 0.9383,
+    "LSS": 0.9587,
     "pairs": 30
   },
   "tiny-aya-global": {
     "vector": "source",
-    "layer": 14,
+    "layer": 12,
     "strength": 1.0,
     "LFS": 0.9583,
+    "OR": 0.9867,
+    "LSS": 0.9723,
+    "pairs": 30
+  },
+  "Qwen2.5-7B-Instruct": {
+    "vector": "source",
+    "layer": 21,
+    "strength": 0.5,
+    "LFS": 0.7367,
     "OR": 0.9758,
-    "LSS": 0.967,
+    "LSS": 0.8395,
+    "pairs": 30
+  },
+  "Qwen2.5-14B-Instruct": {
+    "vector": "source",
+    "layer": 36,
+    "strength": 1.0,
+    "LFS": 0.84,
+    "OR": 0.9117,
+    "LSS": 0.8744,
     "pairs": 30
   }
 }

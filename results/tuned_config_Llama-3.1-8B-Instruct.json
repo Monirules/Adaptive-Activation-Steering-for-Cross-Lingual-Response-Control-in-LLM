@@ -1,0 +1,231 @@
+{
+  "model": "Llama-3.1-8B-Instruct",
+  "margin": 0.02,
+  "global": {
+    "vector": "source",
+    "layer": 20,
+    "strength": 1.0
+  },
+  "targets": {
+    "ar": {
+      "vector": "others",
+      "layer": 12,
+      "strength": 2.0,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.95,
+      "dev_lss": 0.9744,
+      "global_dev_lss": 0.9381,
+      "settings_tried": 46
+    },
+    "cs": {
+      "vector": "source",
+      "layer": 20,
+      "strength": 1.0,
+      "choice": "global",
+      "dev_lfs": 0.9667,
+      "dev_or": 0.975,
+      "dev_lss": 0.9708,
+      "global_dev_lss": 0.9708,
+      "settings_tried": 16
+    },
+    "de": {
+      "vector": "source",
+      "layer": 12,
+      "strength": 1.0,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.975,
+      "dev_lss": 0.9873,
+      "global_dev_lss": 0.9497,
+      "settings_tried": 46
+    },
+    "el": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 1.0,
+      "choice": "tuned",
+      "dev_lfs": 0.9833,
+      "dev_or": 0.8917,
+      "dev_lss": 0.9353,
+      "global_dev_lss": 0.6274,
+      "settings_tried": 16
+    },
+    "en": {
+      "vector": "source",
+      "layer": 20,
+      "strength": 1.0,
+      "choice": "global",
+      "dev_lfs": 1.0,
+      "dev_or": 0.9917,
+      "dev_lss": 0.9958,
+      "global_dev_lss": 0.9958,
+      "settings_tried": 46
+    },
+    "es": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.9833,
+      "dev_lss": 0.9916,
+      "global_dev_lss": 0.954,
+      "settings_tried": 46
+    },
+    "fa": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 0.6833,
+      "dev_or": 0.9167,
+      "dev_lss": 0.783,
+      "global_dev_lss": 0.5944,
+      "settings_tried": 16
+    },
+    "fr": {
+      "vector": "others",
+      "layer": 12,
+      "strength": 2.0,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.975,
+      "dev_lss": 0.9873,
+      "global_dev_lss": 0.9032,
+      "settings_tried": 46
+    },
+    "hi": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 0.9833,
+      "dev_or": 0.9417,
+      "dev_lss": 0.962,
+      "global_dev_lss": 0.7979,
+      "settings_tried": 46
+    },
+    "ja": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.9417,
+      "dev_lss": 0.97,
+      "global_dev_lss": 0.9291,
+      "settings_tried": 46
+    },
+    "ko": {
+      "vector": "source",
+      "layer": 12,
+      "strength": 1.0,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.8833,
+      "dev_lss": 0.9381,
+      "global_dev_lss": 0.8785,
+      "settings_tried": 46
+    },
+    "mt": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 0.3667,
+      "dev_or": 0.5167,
+      "dev_lss": 0.4289,
+      "global_dev_lss": 0.2441,
+      "settings_tried": 16
+    },
+    "no": {
+      "vector": "source",
+      "layer": 12,
+      "strength": 1.5,
+      "choice": "tuned",
+      "dev_lfs": 0.9833,
+      "dev_or": 0.975,
+      "dev_lss": 0.9791,
+      "global_dev_lss": 0.9249,
+      "settings_tried": 16
+    },
+    "ru": {
+      "vector": "source",
+      "layer": 20,
+      "strength": 1.0,
+      "choice": "global",
+      "dev_lfs": 1.0,
+      "dev_or": 0.9833,
+      "dev_lss": 0.9916,
+      "global_dev_lss": 0.9916,
+      "settings_tried": 46
+    },
+    "sw": {
+      "vector": "source",
+      "layer": 12,
+      "strength": 1.5,
+      "choice": "tuned",
+      "dev_lfs": 0.9833,
+      "dev_or": 0.5167,
+      "dev_lss": 0.6774,
+      "global_dev_lss": 0.0485,
+      "settings_tried": 16
+    },
+    "th": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 0.9667,
+      "dev_or": 0.9,
+      "dev_lss": 0.9321,
+      "global_dev_lss": 0.8064,
+      "settings_tried": 16
+    },
+    "tr": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 0.95,
+      "dev_or": 0.8083,
+      "dev_lss": 0.8735,
+      "global_dev_lss": 0.766,
+      "settings_tried": 16
+    },
+    "uk": {
+      "vector": "source",
+      "layer": 16,
+      "strength": 1.0,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.95,
+      "dev_lss": 0.9744,
+      "global_dev_lss": 0.9353,
+      "settings_tried": 16
+    },
+    "vi": {
+      "vector": "source",
+      "layer": 20,
+      "strength": 1.0,
+      "choice": "global",
+      "dev_lfs": 1.0,
+      "dev_or": 0.9167,
+      "dev_lss": 0.9565,
+      "global_dev_lss": 0.9565,
+      "settings_tried": 16
+    },
+    "zh": {
+      "vector": "source",
+      "layer": 24,
+      "strength": 0.75,
+      "choice": "tuned",
+      "dev_lfs": 1.0,
+      "dev_or": 0.95,
+      "dev_lss": 0.9744,
+      "global_dev_lss": 0.9207,
+      "settings_tried": 46
+    }
+  }
+}

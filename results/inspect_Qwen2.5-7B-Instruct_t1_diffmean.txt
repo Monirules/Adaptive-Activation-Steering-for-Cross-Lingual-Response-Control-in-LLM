@@ -1,0 +1,15 @@
+
+Detected answer language per target (/N/lustre/scratch/mahmudmi/clas-data/generations/test/Qwen2.5-7B-Instruct/t1/diffmean-source-L21-c0p5):
+TARGET = correct language, SOURCE = answered in the question's language, unk = low confidence
+  -> ar: TARGET 70%, SOURCE 13%, zh 8%, unk 5%
+  -> de: TARGET 68%, SOURCE 15%, unk 6%, en 5%
+  -> en: TARGET 93%, zh 5%, unk 2%, SOURCE 0%
+  -> es: TARGET 82%, SOURCE 12%, en 3%, zh 2%
+  -> fr: TARGET 80%, SOURCE 11%, zh 4%, en 3%
+  -> hi: unk 29%, SOURCE 24%, en 23%, zh 13%
+  -> ja: TARGET 60%, zh 26%, unk 11%, en 2%
+  -> ko: TARGET 74%, zh 12%, SOURCE 9%, unk 4%
+  -> ru: TARGET 77%, SOURCE 12%, unk 7%, zh 2%
+  -> zh: TARGET 89%, unk 9%, SOURCE 1%, en 0%
+
+4500 answers: 91 look repetitive (2.0%), 167 longer than 3500 characters (3.7%)
