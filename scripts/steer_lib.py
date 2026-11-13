@@ -98,18 +98,37 @@ def generate(model, tok, items: list, max_new_tokens: int, batch_size: int,
                   add_special_tokens=False).to(model.device)
         enc.pop("token_type_ids", None)
         if steerer is not None:
-            steerer.vecs = torch.stack([items[i]["vec"] for i in idx])
+            if hasattr(steerer, "set_batch"):
+                steerer.set_batch([items[i] for i in idx])
+            else:
+                steerer.vecs = torch.stack([items[i]["vec"] for i in idx])
         gen = model.generate(**enc, max_new_tokens=max_new_tokens, do_sample=False,
                              temperature=None, top_p=None, top_k=None,
                              pad_token_id=tok.pad_token_id)
         if steerer is not None:
             steerer.vecs = None
         new = gen[:, enc["input_ids"].shape[1]:]
+        stats = steerer.row_stats(new, stop_ids(model, tok)) if hasattr(steerer, "row_stats") else None
         for j, i in enumerate(idx):
             outs[i] = tok.decode(new[j], skip_special_tokens=True).strip()
+            if stats is not None:
+                items[i]["steer_scale"] = stats[j]
         if log_every and (b + 1) % log_every == 0:
             print(f"    batch {b + 1}/{n_batches}", flush=True)
     return outs
+
+
+def stop_ids(model, tok) -> set:
+    ids = set()
+    eos = getattr(model.generation_config, "eos_token_id", None)
+    if isinstance(eos, int):
+        ids.add(eos)
+    elif eos is not None:
+        ids.update(eos)
+    for t in (tok.eos_token_id, tok.pad_token_id):
+        if t is not None:
+            ids.add(t)
+    return ids
 
 
 def load_means(path: Path):

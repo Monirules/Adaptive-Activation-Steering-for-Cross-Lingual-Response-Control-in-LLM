@@ -9,6 +9,7 @@ from pathlib import Path
 
 import torch
 
+import adaptive_lib as A
 import steer_lib as S
 
 
@@ -44,6 +45,11 @@ def main() -> int:
     p.add_argument("--config-file", type=Path, default=None,
                    help="per-target settings from pick_per_target.py")
     p.add_argument("--method-name", default="tuned")
+    p.add_argument("--adaptive", choices=["gate", "decay"], default=None)
+    p.add_argument("--warmup", type=int, default=8)
+    p.add_argument("--tau", type=float, default=0.0)
+    p.add_argument("--late", type=float, default=0.0)
+    p.add_argument("--ema", type=float, default=0.8)
     p.add_argument("--vectors", nargs="+", default=["source"], choices=["source", "others"])
     p.add_argument("--k", type=int, default=None, help="only first k questions (smoke test)")
     p.add_argument("--max-new-tokens", type=int, default=1024)
@@ -70,6 +76,9 @@ def main() -> int:
     means_file = args.vectors_root / short / "means.pt"
     md = torch.load(means_file, map_location="cpu")
     means = md["means"]
+    prefix = "diffmean"
+    if args.adaptive:
+        prefix = f"adaptive-{args.adaptive}-w{args.warmup}-t{fmt(args.tau)}-l{fmt(args.late)}"
     jobs = []
     if args.config_file is not None:
         per_target = json.loads(args.config_file.read_text(encoding="utf-8"))["targets"]
@@ -92,7 +101,7 @@ def main() -> int:
         for v in args.vectors:
             for l in args.layers:
                 for c in args.strengths:
-                    jobs.append((v, l, c, pairs, out_root / short / track_dir / f"diffmean-{v}-L{l}-c{fmt(c)}"))
+                    jobs.append((v, l, c, pairs, out_root / short / track_dir / f"{prefix}-{v}-L{l}-c{fmt(c)}"))
 
     todo = []
     for v, l, c, sub, d in jobs:
@@ -114,12 +123,21 @@ def main() -> int:
             continue
         t0 = time.time()
         print(f"\n=== vector={v} layer={layer} strength={c} pairs={len(sub)} -> {d}", flush=True)
-        steerer = S.Steerer(model, layer)
+        if args.adaptive:
+            mu_all = torch.stack([means[l][layer].float() for l in ref_langs]).mean(0)
+            steerer = A.AdaptiveSteerer(model, layer, mu_all, mode=args.adaptive, warmup=args.warmup,
+                                        tau=args.tau, late=args.late, ema=args.ema)
+        else:
+            steerer = S.Steerer(model, layer)
         items, keys = [], []
         for s, t in sub:
             vec = c * S.steering_vector(means, layer, s, t, v, ref_langs)
             for j in range(n_q):
-                items.append({"text": texts[s][j], "vec": vec})
+                item = {"text": texts[s][j], "vec": vec}
+                if args.adaptive:
+                    item["mu_t"] = means[t][layer].float()
+                    item["mu_s"] = means[s][layer].float()
+                items.append(item)
                 keys.append((s, t, j))
         try:
             outs = S.generate(model, tok, items, args.max_new_tokens, args.batch_size,
@@ -127,22 +145,29 @@ def main() -> int:
         finally:
             steerer.remove()
         by_pair = {}
-        for (s, t, j), o in zip(keys, outs):
-            by_pair.setdefault((s, t), []).append((j, o))
+        for (s, t, j), o, it in zip(keys, outs, items):
+            by_pair.setdefault((s, t), []).append((j, o, it.get("steer_scale")))
         d.mkdir(parents=True, exist_ok=True)
         for (s, t), rows in by_pair.items():
             rows.sort()
             data = {
                 "source_language": s, "target_language": t, "model": args.model,
-                "method": f"diffmean:{v}:layer{layer}:strength{c}", "track": args.track,
+                "method": f"{prefix}:{v}:layer{layer}:strength{c}", "track": args.track,
                 "steering": {"vector": v, "layer": layer, "strength": c,
-                             "max_new_tokens": args.max_new_tokens, "split": args.split},
-                "results": [{"question_idx": j, "input": questions[s][j], "output": o,
-                             "original_prompt": questions[s][j]} for j, o in rows],
+                             "max_new_tokens": args.max_new_tokens, "split": args.split,
+                             "adaptive": None if not args.adaptive else {
+                                 "mode": args.adaptive, "warmup": args.warmup, "tau": args.tau,
+                                 "late": args.late, "ema": args.ema}},
+                "results": [dict({"question_idx": j, "input": questions[s][j], "output": o,
+                                  "original_prompt": questions[s][j]},
+                                 **({} if sc is None else {"steer_scale": sc}))
+                            for j, o, sc in rows],
             }
             (d / f"{s}_to_{t}.json").write_text(json.dumps(data, indent=2, ensure_ascii=False),
                                                 encoding="utf-8")
-        print(f"=== done {len(items)} answers in {time.time() - t0:.0f}s", flush=True)
+        scales = [it["steer_scale"] for it in items if "steer_scale" in it]
+        extra = f", mean steer scale {sum(scales) / len(scales):.3f}" if scales else ""
+        print(f"=== done {len(items)} answers in {time.time() - t0:.0f}s{extra}", flush=True)
     return 0
 
 
