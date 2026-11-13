@@ -1,0 +1,19 @@
+{
+  "model": "Llama-3.1-8B-Instruct",
+  "mode": "gate",
+  "warmup": 32,
+  "tau": 0.0,
+  "late": 0.0,
+  "ema": 0.8,
+  "vector": "source",
+  "layer": 16,
+  "strength": 0.75,
+  "dev_tracks": [
+    "t1",
+    "t2"
+  ],
+  "dev_lss": 0.9035,
+  "dev_lfs": 0.8983,
+  "dev_or": 0.9096,
+  "fixed_dev_lss": 0.8923
+}

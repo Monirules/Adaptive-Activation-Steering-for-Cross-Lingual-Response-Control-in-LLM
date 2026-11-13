@@ -1,0 +1,15 @@
+
+Detected answer language per target (/N/lustre/scratch/mahmudmi/clas-data/generations/test/Llama-3.1-8B-Instruct/t2/tuned-adaptive):
+TARGET = correct language, SOURCE = answered in the question's language, unk = low confidence
+  -> cs: TARGET 96%, unk 2%, slv_Latn 0%, sk 0%
+  -> el: TARGET 99%, unk 1%
+  -> fa: TARGET 55%, unk 35%, prs_Arab 10%, vi 0%
+  -> mt: it 26%, TARGET 24%, SOURCE 23%, unk 15%
+  -> no: TARGET 95%, dan_Latn 3%, unk 1%, swe_Latn 0%
+  -> sw: TARGET 97%, unk 1%, tsn_Latn 1%, tso_Latn 0%
+  -> th: TARGET 100%, unk 0%
+  -> tr: TARGET 97%, unk 2%, SOURCE 0%, jav_Latn 0%
+  -> uk: TARGET 99%, unk 1%, bel_Cyrl 0%
+  -> vi: TARGET 100%, unk 0%, no 0%
+
+5000 answers: 2072 look repetitive (41.4%), 119 longer than 3500 characters (2.4%)
