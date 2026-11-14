@@ -171,16 +171,19 @@
 | model | track | method | LFS | OR | LSS | pairs | answers | judge unparsed |
 |---|---|---|---|---|---|---|---|---|
 | Llama-3.1-8B-Instruct | t1 | adaptive-gate-w32-t0-l0-source-L16-c0p75 | 0.960 | 0.975 | **0.968** | 90 | 4500 | 0 |
+| Llama-3.1-8B-Instruct | t1 | diffmean-source-L16-c0p75 | 0.962 | 0.966 | **0.964** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | diffmean-source-L20-c1 | 0.958 | 0.905 | **0.931** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | english | 0.532 | 0.989 | **0.692** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | none | 0.000 | 0.994 | **0.000** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t1 | tuned | 0.939 | 0.965 | **0.952** | 90 | 4500 | 0 |
 | Llama-3.1-8B-Instruct | t2 | adaptive-gate-w32-t0-l0-source-L16-c0p75 | 0.807 | 0.900 | **0.851** | 100 | 5000 | 2 |
+| Llama-3.1-8B-Instruct | t2 | diffmean-source-L16-c0p75 | 0.819 | 0.866 | **0.842** | 100 | 5000 | 5 |
 | Llama-3.1-8B-Instruct | t2 | diffmean-source-L20-c1 | 0.868 | 0.705 | **0.778** | 100 | 5000 | 7 |
 | Llama-3.1-8B-Instruct | t2 | english | 0.767 | 0.932 | **0.841** | 100 | 5000 | 11 |
 | Llama-3.1-8B-Instruct | t2 | tuned | 0.864 | 0.864 | **0.864** | 100 | 5000 | 1 |
 | Llama-3.1-8B-Instruct | t2 | tuned-adaptive | 0.862 | 0.891 | **0.876** | 100 | 5000 | 2 |
 | Llama-3.1-8B-Instruct | t3/de | adaptive-gate-w32-t0-l0-source-L16-c0p75 | 0.980 | 0.970 | **0.975** | 19 | 950 | 0 |
+| Llama-3.1-8B-Instruct | t3/de | diffmean-source-L16-c0p75 | 0.979 | 0.968 | **0.974** | 19 | 950 | 0 |
 | Llama-3.1-8B-Instruct | t3/de | diffmean-source-L20-c1 | 0.972 | 0.957 | **0.964** | 19 | 950 | 0 |
 | Llama-3.1-8B-Instruct | t3/de | english | 0.552 | 0.983 | **0.707** | 19 | 950 | 0 |
 | Llama-3.1-8B-Instruct | t3/de | tuned | 0.983 | 0.967 | **0.975** | 19 | 950 | 0 |

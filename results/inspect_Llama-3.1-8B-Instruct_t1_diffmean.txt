@@ -1,0 +1,15 @@
+
+Detected answer language per target (/N/lustre/scratch/mahmudmi/clas-data/generations/test/Llama-3.1-8B-Instruct/t1/diffmean-source-L16-c0p75):
+TARGET = correct language, SOURCE = answered in the question's language, unk = low confidence
+  -> ar: TARGET 99%, unk 1%
+  -> de: TARGET 98%, unk 1%, krc_Cyrl 1%
+  -> en: TARGET 98%, unk 2%
+  -> es: TARGET 99%, por_Latn 0%, unk 0%, sk 0%
+  -> fr: TARGET 100%
+  -> hi: TARGET 85%, SOURCE 8%, unk 7%, mar_Deva 0%
+  -> ja: TARGET 93%, unk 6%, zh 1%
+  -> ko: TARGET 100%, krc_Cyrl 0%
+  -> ru: TARGET 98%, unk 1%, uk 0%
+  -> zh: TARGET 92%, unk 7%, SOURCE 1%
+
+4500 answers: 1139 look repetitive (25.3%), 105 longer than 3500 characters (2.3%)
