@@ -1,0 +1,506 @@
+{
+  "gen_dir": "/N/lustre/scratch/mahmudmi/clas-data/generations/test/Llama-3.1-8B-Instruct/t1/adaptive-gate-w32-t0-l0-source-L16-c0p75",
+  "target": "hi",
+  "items": [
+    {
+      "item_id": 1,
+      "file": "ar_to_hi.json",
+      "index": 2
+    },
+    {
+      "item_id": 2,
+      "file": "ar_to_hi.json",
+      "index": 6
+    },
+    {
+      "item_id": 3,
+      "file": "ar_to_hi.json",
+      "index": 7
+    },
+    {
+      "item_id": 4,
+      "file": "ar_to_hi.json",
+      "index": 14
+    },
+    {
+      "item_id": 5,
+      "file": "ar_to_hi.json",
+      "index": 18
+    },
+    {
+      "item_id": 6,
+      "file": "ar_to_hi.json",
+      "index": 31
+    },
+    {
+      "item_id": 7,
+      "file": "ar_to_hi.json",
+      "index": 34
+    },
+    {
+      "item_id": 8,
+      "file": "ar_to_hi.json",
+      "index": 37
+    },
+    {
+      "item_id": 9,
+      "file": "ar_to_hi.json",
+      "index": 39
+    },
+    {
+      "item_id": 10,
+      "file": "ar_to_hi.json",
+      "index": 40
+    },
+    {
+      "item_id": 11,
+      "file": "ar_to_hi.json",
+      "index": 45
+    },
+    {
+      "item_id": 12,
+      "file": "ar_to_hi.json",
+      "index": 46
+    },
+    {
+      "item_id": 13,
+      "file": "de_to_hi.json",
+      "index": 0
+    },
+    {
+      "item_id": 14,
+      "file": "de_to_hi.json",
+      "index": 5
+    },
+    {
+      "item_id": 15,
+      "file": "de_to_hi.json",
+      "index": 9
+    },
+    {
+      "item_id": 16,
+      "file": "de_to_hi.json",
+      "index": 11
+    },
+    {
+      "item_id": 17,
+      "file": "de_to_hi.json",
+      "index": 13
+    },
+    {
+      "item_id": 18,
+      "file": "de_to_hi.json",
+      "index": 16
+    },
+    {
+      "item_id": 19,
+      "file": "de_to_hi.json",
+      "index": 30
+    },
+    {
+      "item_id": 20,
+      "file": "de_to_hi.json",
+      "index": 33
+    },
+    {
+      "item_id": 21,
+      "file": "de_to_hi.json",
+      "index": 40
+    },
+    {
+      "item_id": 22,
+      "file": "de_to_hi.json",
+      "index": 41
+    },
+    {
+      "item_id": 23,
+      "file": "de_to_hi.json",
+      "index": 42
+    },
+    {
+      "item_id": 24,
+      "file": "de_to_hi.json",
+      "index": 43
+    },
+    {
+      "item_id": 25,
+      "file": "de_to_hi.json",
+      "index": 48
+    },
+    {
+      "item_id": 26,
+      "file": "en_to_hi.json",
+      "index": 11
+    },
+    {
+      "item_id": 27,
+      "file": "en_to_hi.json",
+      "index": 12
+    },
+    {
+      "item_id": 28,
+      "file": "en_to_hi.json",
+      "index": 16
+    },
+    {
+      "item_id": 29,
+      "file": "en_to_hi.json",
+      "index": 17
+    },
+    {
+      "item_id": 30,
+      "file": "en_to_hi.json",
+      "index": 30
+    },
+    {
+      "item_id": 31,
+      "file": "en_to_hi.json",
+      "index": 32
+    },
+    {
+      "item_id": 32,
+      "file": "en_to_hi.json",
+      "index": 39
+    },
+    {
+      "item_id": 33,
+      "file": "en_to_hi.json",
+      "index": 40
+    },
+    {
+      "item_id": 34,
+      "file": "en_to_hi.json",
+      "index": 41
+    },
+    {
+      "item_id": 35,
+      "file": "en_to_hi.json",
+      "index": 47
+    },
+    {
+      "item_id": 36,
+      "file": "es_to_hi.json",
+      "index": 4
+    },
+    {
+      "item_id": 37,
+      "file": "es_to_hi.json",
+      "index": 5
+    },
+    {
+      "item_id": 38,
+      "file": "es_to_hi.json",
+      "index": 11
+    },
+    {
+      "item_id": 39,
+      "file": "es_to_hi.json",
+      "index": 15
+    },
+    {
+      "item_id": 40,
+      "file": "es_to_hi.json",
+      "index": 16
+    },
+    {
+      "item_id": 41,
+      "file": "es_to_hi.json",
+      "index": 22
+    },
+    {
+      "item_id": 42,
+      "file": "es_to_hi.json",
+      "index": 24
+    },
+    {
+      "item_id": 43,
+      "file": "es_to_hi.json",
+      "index": 27
+    },
+    {
+      "item_id": 44,
+      "file": "es_to_hi.json",
+      "index": 28
+    },
+    {
+      "item_id": 45,
+      "file": "es_to_hi.json",
+      "index": 41
+    },
+    {
+      "item_id": 46,
+      "file": "es_to_hi.json",
+      "index": 45
+    },
+    {
+      "item_id": 47,
+      "file": "es_to_hi.json",
+      "index": 47
+    },
+    {
+      "item_id": 48,
+      "file": "fr_to_hi.json",
+      "index": 3
+    },
+    {
+      "item_id": 49,
+      "file": "fr_to_hi.json",
+      "index": 4
+    },
+    {
+      "item_id": 50,
+      "file": "fr_to_hi.json",
+      "index": 7
+    },
+    {
+      "item_id": 51,
+      "file": "fr_to_hi.json",
+      "index": 12
+    },
+    {
+      "item_id": 52,
+      "file": "fr_to_hi.json",
+      "index": 14
+    },
+    {
+      "item_id": 53,
+      "file": "fr_to_hi.json",
+      "index": 17
+    },
+    {
+      "item_id": 54,
+      "file": "fr_to_hi.json",
+      "index": 31
+    },
+    {
+      "item_id": 55,
+      "file": "fr_to_hi.json",
+      "index": 32
+    },
+    {
+      "item_id": 56,
+      "file": "fr_to_hi.json",
+      "index": 37
+    },
+    {
+      "item_id": 57,
+      "file": "fr_to_hi.json",
+      "index": 39
+    },
+    {
+      "item_id": 58,
+      "file": "fr_to_hi.json",
+      "index": 43
+    },
+    {
+      "item_id": 59,
+      "file": "ja_to_hi.json",
+      "index": 1
+    },
+    {
+      "item_id": 60,
+      "file": "ja_to_hi.json",
+      "index": 7
+    },
+    {
+      "item_id": 61,
+      "file": "ja_to_hi.json",
+      "index": 9
+    },
+    {
+      "item_id": 62,
+      "file": "ja_to_hi.json",
+      "index": 18
+    },
+    {
+      "item_id": 63,
+      "file": "ja_to_hi.json",
+      "index": 25
+    },
+    {
+      "item_id": 64,
+      "file": "ja_to_hi.json",
+      "index": 37
+    },
+    {
+      "item_id": 65,
+      "file": "ja_to_hi.json",
+      "index": 40
+    },
+    {
+      "item_id": 66,
+      "file": "ja_to_hi.json",
+      "index": 49
+    },
+    {
+      "item_id": 67,
+      "file": "ko_to_hi.json",
+      "index": 1
+    },
+    {
+      "item_id": 68,
+      "file": "ko_to_hi.json",
+      "index": 4
+    },
+    {
+      "item_id": 69,
+      "file": "ko_to_hi.json",
+      "index": 12
+    },
+    {
+      "item_id": 70,
+      "file": "ko_to_hi.json",
+      "index": 13
+    },
+    {
+      "item_id": 71,
+      "file": "ko_to_hi.json",
+      "index": 14
+    },
+    {
+      "item_id": 72,
+      "file": "ko_to_hi.json",
+      "index": 20
+    },
+    {
+      "item_id": 73,
+      "file": "ko_to_hi.json",
+      "index": 21
+    },
+    {
+      "item_id": 74,
+      "file": "ko_to_hi.json",
+      "index": 22
+    },
+    {
+      "item_id": 75,
+      "file": "ko_to_hi.json",
+      "index": 27
+    },
+    {
+      "item_id": 76,
+      "file": "ko_to_hi.json",
+      "index": 31
+    },
+    {
+      "item_id": 77,
+      "file": "ko_to_hi.json",
+      "index": 34
+    },
+    {
+      "item_id": 78,
+      "file": "ko_to_hi.json",
+      "index": 35
+    },
+    {
+      "item_id": 79,
+      "file": "ko_to_hi.json",
+      "index": 38
+    },
+    {
+      "item_id": 80,
+      "file": "ko_to_hi.json",
+      "index": 39
+    },
+    {
+      "item_id": 81,
+      "file": "ru_to_hi.json",
+      "index": 1
+    },
+    {
+      "item_id": 82,
+      "file": "ru_to_hi.json",
+      "index": 7
+    },
+    {
+      "item_id": 83,
+      "file": "ru_to_hi.json",
+      "index": 12
+    },
+    {
+      "item_id": 84,
+      "file": "ru_to_hi.json",
+      "index": 25
+    },
+    {
+      "item_id": 85,
+      "file": "ru_to_hi.json",
+      "index": 27
+    },
+    {
+      "item_id": 86,
+      "file": "ru_to_hi.json",
+      "index": 33
+    },
+    {
+      "item_id": 87,
+      "file": "ru_to_hi.json",
+      "index": 34
+    },
+    {
+      "item_id": 88,
+      "file": "ru_to_hi.json",
+      "index": 44
+    },
+    {
+      "item_id": 89,
+      "file": "ru_to_hi.json",
+      "index": 47
+    },
+    {
+      "item_id": 90,
+      "file": "zh_to_hi.json",
+      "index": 3
+    },
+    {
+      "item_id": 91,
+      "file": "zh_to_hi.json",
+      "index": 5
+    },
+    {
+      "item_id": 92,
+      "file": "zh_to_hi.json",
+      "index": 12
+    },
+    {
+      "item_id": 93,
+      "file": "zh_to_hi.json",
+      "index": 14
+    },
+    {
+      "item_id": 94,
+      "file": "zh_to_hi.json",
+      "index": 18
+    },
+    {
+      "item_id": 95,
+      "file": "zh_to_hi.json",
+      "index": 23
+    },
+    {
+      "item_id": 96,
+      "file": "zh_to_hi.json",
+      "index": 24
+    },
+    {
+      "item_id": 97,
+      "file": "zh_to_hi.json",
+      "index": 30
+    },
+    {
+      "item_id": 98,
+      "file": "zh_to_hi.json",
+      "index": 41
+    },
+    {
+      "item_id": 99,
+      "file": "zh_to_hi.json",
+      "index": 43
+    },
+    {
+      "item_id": 100,
+      "file": "zh_to_hi.json",
+      "index": 47
+    }
+  ]
+}

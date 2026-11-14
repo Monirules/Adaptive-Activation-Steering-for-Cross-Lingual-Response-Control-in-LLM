@@ -1,0 +1,11 @@
+Hindi output check: rating instructions
+
+Each row is one answer written by the model in Hindi. The question is shown in its original (source) language.
+Rate only the content of the answer, the same way the official judge does.
+
+0 = unrelated to the question, gibberish, or broken repeated text
+1 = somewhat related, but incomplete, partly off-topic, or of little use
+2 = clearly related to the question, coherent, and useful
+
+Write 0, 1 or 2 in your column (rater_1 or rater_2). Rate on your own, without looking at the other rater's column.
+Use the notes column for anything unusual, for example mixed languages or text that loops.
